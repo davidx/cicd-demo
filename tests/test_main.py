@@ -7,7 +7,7 @@ from main import app
 from datetime import datetime
 import pytest
 
-client = TestClient(app=app)
+client = TestClient(transport=app)
 
 def test_root_endpoint():
     response = client.get("/")

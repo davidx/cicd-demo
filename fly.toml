@@ -1,5 +1,12 @@
-app = "cicd-demo"
-primary_region = "lax"
+# fly.toml app configuration file generated for cicd-demo on 2025-02-02T12:05:15-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'cicd-demo'
+primary_region = 'lax'
+
+[build]
 
 [http_service]
   internal_port = 8080
@@ -8,9 +15,14 @@ primary_region = "lax"
 [checks]
   [checks.health]
     port = 8080
-    type = "http"
-    interval = "15s"
-    timeout = "2s"
-    grace_period = "5s"
-    method = "get"
-    path = "/health"
+    type = 'http'
+    interval = '15s'
+    timeout = '2s'
+    grace_period = '5s'
+    method = 'get'
+    path = '/health'
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

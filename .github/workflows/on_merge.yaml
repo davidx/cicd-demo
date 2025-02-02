@@ -7,7 +7,7 @@ on:
 jobs:
   deploy_dev:
     environment: dev
-    name: Deploy app
+    name: Deploy to dev
     runs-on: ubuntu-latest
     concurrency: deploy-group    # optional: ensure only one action runs at a time
     steps:
@@ -26,7 +26,7 @@ jobs:
   deploy_prod:
     environment: prod
     needs: deploy_dev
-    name: Deploy app
+    name: Deploy to prod
     runs-on: ubuntu-latest
     concurrency: deploy-group    # optional: ensure only one action runs at a time
     steps:

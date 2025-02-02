@@ -24,6 +24,7 @@ jobs:
 
 
   preview:
+    needs: test
     # Skip preview deployment if PR is closed
     if: github.event.action != 'closed'
     environment: dev

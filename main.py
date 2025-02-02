@@ -1,12 +1,22 @@
 # main.py
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import HTMLResponse
 from datetime import datetime
 
 app = FastAPI()
+templates = Jinja2Templates(directory="templates")
 
-@app.get("/")
-async def root():
-    return {"message": "Welcome to the CICD Demo App from David"}
+@app.get("/", response_class=HTMLResponse)
+async def root(request: Request):
+    return templates.TemplateResponse(
+        "index.html", 
+        {
+            "request": request,  # Required by Jinja2Templates
+            "message": "Welcome to the CICD Demo App from David",
+            "timestamp": datetime.now().isoformat()
+        }
+    )
 
 @app.get("/health")
 async def health():

@@ -1,9 +1,12 @@
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+
 from fastapi.testclient import TestClient
 from main import app
 from datetime import datetime
 import pytest
 
-# Alternative initialization
 client = TestClient(app=app)
 
 def test_root_endpoint():

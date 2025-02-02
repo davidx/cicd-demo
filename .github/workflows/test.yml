@@ -1,8 +1,0 @@
-name: Python Tests
-
-on:
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  

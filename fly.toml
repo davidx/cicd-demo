@@ -1,0 +1,16 @@
+app = "cicd-demo"
+primary_region = "lax"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+
+[checks]
+  [checks.health]
+    port = 8080
+    type = "http"
+    interval = "15s"
+    timeout = "2s"
+    grace_period = "5s"
+    method = "get"
+    path = "/health"

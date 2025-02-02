@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to Fly.io demo app"}
+    return {"message": "Welcome to the CICD Demo App from David"}
 
 @app.get("/health")
 async def health():

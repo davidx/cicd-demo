@@ -2,14 +2,6 @@
 
 A FastAPI application with automated deployment pipeline using GitHub Actions and Fly.io.
 
-## Features
-
-FastAPI web application
-Health checks
-Multi-environment deployment (dev/prod)
-Automated testing and preview deployments for PRs
-Continuous deployment on merge to main
-
 ## Prerequisites
 
 Python 3.x

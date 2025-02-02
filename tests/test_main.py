@@ -3,7 +3,8 @@ from main import app
 from datetime import datetime
 import pytest
 
-client = TestClient(app)
+# Alternative initialization
+client = TestClient(app=app)
 
 def test_root_endpoint():
     response = client.get("/")

@@ -24,7 +24,11 @@ async def root(request: Request):
     )
 @app.get("/health")
 async def health():
-    return {"status": "ok"}
+    """Return service health status with timestamp."""
+    return {
+        "status": "ok",
+        "timestamp": get_iso_timestamp()
+    }
 
 @app.get("/api/time")
 async def get_time():

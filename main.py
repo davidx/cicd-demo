@@ -28,4 +28,4 @@ async def health():
 
 @app.get("/api/time")
 async def get_time():
-    return {"time": datetime.now().isoformat()}
+    return {"time": get_iso_timestamp()}
